@@ -1,0 +1,35 @@
+version: '3'
+services:
+ # db:
+  #  image: 'mysql'
+  #  ports:
+   #   - "3306:3306"
+   # environment:
+    #  - MYSQL_HOST=%
+    #  - MYSQL_USER=root
+     # - MYSQL_PASSWORD=root
+     # - MYSQL_PORT=3306
+ # backend:
+   # image: app
+   # ports:
+   #   - "9090:8080"
+   # links:
+   #   - "db"
+  #  depends_on:
+ #     - "db"
+
+  angular-service:
+    container_name: angular-container
+    build: ./
+    volumes:
+      - './:/usr/src/app'
+   # links:
+   #   - "backend"
+    #depends_on:
+    # - "backend"
+    ports:
+      - "4200:4200"
+    command: ["npm", "start"]
+
+
+
