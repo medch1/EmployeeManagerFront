@@ -1,0 +1,4 @@
+ docker run -d  -p 3307:3306 --net spring-net --name mysqldb -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=test  mysql
+docker run -p 9090:8080 --name app --net spring-net --env-file env app
+
+docker run -p 4200:4200 emp-manager 
